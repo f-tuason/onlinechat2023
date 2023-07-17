@@ -1,0 +1,21 @@
+<html>
+<head>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h2>Profile</h2>
+  <form id="profile" action="/profile" method="POST" enctype="multipart/form-data">
+    <label for="firstname">First Name</label><br />
+    <input type="text" id="firstname" name="firstname" value="<%= firstname %>" autofocus required /><br />
+    <label for="lastname">Last Name</label><br />
+    <input type="text" id="lastname" name="lastname" value="<%= lastname %>" required /><br />
+    <label for="image">Image</label><br />
+    <% if (image) { %>
+      <img src="<%= image %>" alt="profile image" width="32" height="32" /><br />
+    <% } %>
+    <input type="file" id="image" name="image" /><br />
+    <button type="submit">Update</button><br />
+  </form>
+  <script src="script.js"></script>
+</body>
+</html>
